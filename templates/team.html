@@ -1,0 +1,58 @@
+{% extends "./partial/base.html" %} 
+
+{% load static %}
+{% block title %}Our Attorneys{% endblock title %} 
+
+{% block content %}
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Attorneys</h2>
+                        <p>home <span>//</span>Attorneys</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+ <!-- team_part part start-->
+ <section class="team_part our_offer section_bg section_padding" style="background-color: white !important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-sm-10">
+                <div class="section_tittle">
+                    <h2>Meet Our Attorneys</h2>
+                    <p>Over their the abundantly every midst place thing them them winged you're
+                        beginning forth you. Fruit seas very does can after herb moved so was Kind </p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            {% for team in teams %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_offer_part">
+                    <div class="single_offer">
+                        <img class="img-fluid" src="{{team.image.url}}" alt="offer_img_1">
+                        <div class="hover_text">
+                            <p>{{team.description|slice:"600"}}</p>
+                        </div>
+
+                    </div>
+                    <div class="team_member_info">
+                        <h4>{{team.name}}</h4>
+                        <p>{{team.title}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- team_part part end-->
+{% endblock content %}

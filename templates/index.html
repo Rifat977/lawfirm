@@ -1,0 +1,193 @@
+{% extends "./partial/base.html" %} 
+
+{% load static %}
+{% block title %}Home{% endblock title %} 
+
+{% block content %}
+
+<!-- banner part start-->
+<section>
+    <div id="carouselContainer" class="container-fluid">
+        <div id="carouselExampleControls" class="carousel slide p-3" data-ride="carousel">
+            <div class="carousel-inner" style="border-radius: 10px !important;">
+                {% for slider in sliders %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img class="d-block w-100" src="{{slider.image.url}}" alt="{{slider.title}}">
+                    <div class="carousel-overlay"></div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- banner part end-->
+
+
+    <!-- about part start-->
+    <section class="about_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_tittle text-center">
+                        <h2>{{about.title}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-7">
+                    <div class="about_part_img">
+                        <img src="{{about.image1.url}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-7">
+                    <div class="about_part_img">
+                        <img src="{{about.image2.url}}" alt="#">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="about_text text-center">
+                        <p>{{about.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about part end-->
+
+    <section class="single_service section_padding" style="background-color: #f3f1ef !important;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="section_tittle">
+                        <h2>Practice Areas</h2>
+                        <p><span style="font-weight: bold;">Area of Practice at a glance: </span>All sorts of litigation, Alternative Dispute Resolution (ADR),
+                            Arbitration, Admiralty and Maritime Dispute Resolution, Banking and Finance, Corporate
+                            Documentation, Merger and Acquisition, Employment and Labour law, Intellectual property,
+                            Investment and Direct Foreign Investment, Public Procurement law, Real estate, Security and
+                            Exchange laws, Taxation, VAT and Customs, etc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                {% for service in services %}
+                <div class="col-lg-4 col-sm-12">
+                    <div class="single_single_service">
+                        <img style="height:auto; width: 100px;" src="{{service.image.url}}" alt="#">
+                        <h4>{{service.title}}</h4>
+                        <p>{{service.description|slice:"180"}} <a href="" style="text-decoration: none; color: black;">Read More..</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- team_part part start-->
+    <section class="team_part our_offer section_bg section_padding" style="background-color: white !important;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-sm-10">
+                    <div class="section_tittle">
+                        <h2>Meet Our Attorneys</h2>
+                        <p>Over their the abundantly every midst place thing them them winged you're
+                            beginning forth you. Fruit seas very does can after herb moved so was Kind </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                {% for team in teams %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_offer_part">
+                        <div class="single_offer">
+                            <img class="img-fluid" src="{{team.image.url}}" alt="offer_img_1">
+                            <div class="hover_text">
+                                <p>{{team.description|slice:"600"}}</p>
+                            </div>
+
+                        </div>
+                        <div class="team_member_info">
+                            <h4>{{team.name}}</h4>
+                            <p>{{team.title}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- team_part part end-->
+
+    <!-- Service part start-->
+    <section class="service_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_tittle text-center">
+                        <h2>Our Clients</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                {% for client in clients %}
+                <div class="col-lg-3 col-sm-6 mt-2">
+                    <div class="single_service_part">
+                        <div class="single_service_text">
+                            <img src="{{client.image.url}}" alt="">
+                            <h2>{{client.name}}</h2>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service part end-->
+
+    <!-- team_part part start-->
+    <section class="blog_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-sm-10">
+                    <div class="section_tittle">
+                        <h2>Latest From Blog</h2>
+                        <p>Over their the abundantly every midst place thing them them winged you're beginning
+                            forth you fruit seas very does can after herb moved so was kind </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_offer_part">
+                        <div class="single_offer">
+                            <img src="{{blog.image.url}}" alt="">
+                            <div class="hover_text">
+                                <div class="single-home-blog">
+                                    <a href="blog.html"> <i class="ti-bookmark"></i> {{blog.category}}</a>
+                                    <a class="time"> <i class="ti-time"></i> {{blog.publication_date}}</a>
+                                    <a href="blog.html">
+                                        <h5 class="card-title">{{blog.title}}</h5>
+                                    </a>
+                                    <p>{{blog.content|safe|slice:'200'}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- team_part part end-->
+{% endblock content %}
