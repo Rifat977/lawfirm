@@ -6513,7 +6513,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 11, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_breadcrumb.scss */
 .breadcrumb .breadcrumb_iner {
-  height: 450px;
+  height: 200px;
   width: 100%;
   display: table;
 }
