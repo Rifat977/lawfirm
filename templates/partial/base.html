@@ -36,13 +36,8 @@
             height: 700px;
         }
         .carousel-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 500px;
-            height: 100%;
+            height: auto;
             width: 100%;
-            object-fit: cover; /* Ensures the image covers the div */
         }
         .carousel-overlay {
             position: absolute;
@@ -57,11 +52,10 @@
         }
         /* Media queries for responsive design */
         @media (max-width: 768px) {
-            .carousel-item {
-                height: 400px; /* Adjust height for smaller screens */
-            }
             .carousel-item img {
-                min-height: 300px;
+                height: auto;
+                background-position: center;
+                background-size: cover !important;
             }
         }
         @media (max-width: 576px) {
@@ -86,9 +80,9 @@
             text-decoration: underline;
         }
         .single_offer img {
-            height: 400px !important; /* Adjust to your desired height */
-            width: 100% !important; /* Ensures the image fits the container's width */
-            object-fit: cover !important; /* Ensures the image covers the container without stretching */
+            height: 400px !important;
+            width: 100% !important;
+            object-fit: cover !important;
         }
     </style>
 
@@ -96,21 +90,22 @@
 
 <body>
 
-<div class="topbar text-center p-2">
+    <div class="topbar text-center p-2">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 text-md-left text-center">
+            <div class="col-md-6 col-12 text-md-left text-center mb-2 mb-md-0">
               <span>Email: {{site_settings.email}}</span>
-              <span class="ml-3">Phone: {{site_settings.phone_number_1}}, {{site_settings.phone_number_2}}</span>
+              <span class="ml-md-3 d-block d-md-inline">Phone: {{site_settings.phone_number_1}}, {{site_settings.phone_number_2}}</span>
             </div>
-            <div class="col-md-6 text-md-right text-center">
+            <div class="col-md-6 col-12 text-md-right text-center">
               <a href="{{site_settings.linkedin_url}}" class="mr-2">Linkedin</a> |
               <a href="{{site_settings.facebook_url}}" class="mx-2">Facebook</a> |
               <a href="{{site_settings.youtube_url}}" class="ml-2">Youtube</a>
             </div>
           </div>
         </div>
-</div>
+      </div>
+      
 
 <!--::header part start::-->
 <header class="main_menu home_menu" style="background-color: #162b45; height: 100px;">
@@ -179,20 +174,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-sm-6 col-xl-2">
-                    <div class="single-footer-widget">
-                        <h4>Our Service</h4>
-                        <ul>
-                            <li><a href="#">Corporate services</a></li>
-                            <li><a href="#">Litigation services in the Supreme Court</a></li>
-                            <li><a href="#">Litigation services in the lower courts</a></li>
-                            <li><a href="#">Litigation services relating VAT and Customs</a></li>
-                            <li><a href="#">Capital market</a></li>
-                            <li><a href="#">Employment Law</a></li>
-                        </ul>
-
-                    </div>
-                </div> -->
                 <div class="col-sm-6 col-xl-4">
                     <div class="single-footer-widget footer_icon">
                         <h4>Location</h4>

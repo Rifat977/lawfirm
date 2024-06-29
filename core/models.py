@@ -10,7 +10,7 @@ from urllib.parse import urlparse, parse_qs
 
 class Slider(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='slider/')
+    image = models.ImageField(upload_to='slider/', help_text='Image dimensions should be 1500px (width) by 800px (height).')
 
     def save(self, *args, **kwargs):
         if self.pk:
@@ -108,7 +108,7 @@ class SiteSettings(models.Model):
     phone_number_2 = models.CharField(max_length=20, blank=True, null=True)
     evening_chamber_location = models.CharField(max_length=200)
     court_chamber_location = models.CharField(max_length=200)
-    logo = models.FileField(upload_to='logos/')
+    logo = models.FileField(upload_to='logos/', help_text='Image dimensions should be 250px (width) by 75px (height).')
     linkedin_url = models.URLField(blank=True, null=True)
     facebook_url = models.URLField(blank=True, null=True)
     youtube_url = models.URLField(blank=True, null=True)

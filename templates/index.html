@@ -7,9 +7,9 @@
 
 <!-- banner part start-->
 <section>
-    <div id="carouselContainer" class="container-fluid">
+    <div id="carouselContainer" class="container-fluid p-0">
         <div id="carouselExampleControls" class="carousel slide p-3" data-ride="carousel">
-            <div class="carousel-inner" style="border-radius: 10px !important;">
+            <div class="carousel-inner" style="border-radius: 10px;">
                 {% for slider in sliders %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <img class="d-block w-100" src="{{slider.image.url}}" alt="{{slider.title}}">
@@ -18,12 +18,12 @@
                 {% endfor %}
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
@@ -31,8 +31,9 @@
 <!-- banner part end-->
 
 
+
     <!-- about part start-->
-    <section class="about_part section_padding">
+    <section class="about_part mt-md-5 mt-0">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -84,7 +85,7 @@
                     <div class="single_single_service">
                         <img style="height:auto; width: 100px;" src="{{service.image.url}}" alt="#">
                         <h4>{{service.title}}</h4>
-                        <p>{{service.description|slice:"180"}} <a href="" style="text-decoration: none; color: black;">Read More..</a></p>
+                        <p>{{service.description|slice:"180"}} <a href="{% url 'core:service' %}" style="text-decoration: none; color: black;">Read More..</a></p>
                     </div>
                 </div>
                 {% endfor %}
