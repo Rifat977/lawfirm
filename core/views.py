@@ -1,6 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 
+from django.core.mail import send_mail
+from django.conf import settings
+import smtplib
+from django.http import HttpResponse
+
 # Create your views here.
 def index(request):
     about = AboutUs.objects.first()
@@ -39,6 +44,18 @@ def contact(request):
 
         contact = ContactUs(message=message, name=name, email=email, subject=subject)
         contact.save()
+
+        try:
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                ['info@Prominentlawfirm.com'],
+                fail_silently=False,
+            )
+        except Exception as e:
+            print(e)
+            return HttpResponse(f'SMTP error occurred: {e}')
 
         return redirect('core:contact')
 
