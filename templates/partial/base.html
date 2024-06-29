@@ -33,22 +33,10 @@
     <style>
         .carousel-item {
             position: relative;
-            height: 700px;
         }
         .carousel-item img {
             height: auto;
             width: 100%;
-        }
-        .carousel-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0); /* Adjust opacity as needed */
-        }
-        .carousel-caption {
-            z-index: 2;
         }
         /* Media queries for responsive design */
         @media (max-width: 768px) {
@@ -56,14 +44,6 @@
                 height: auto;
                 background-position: center;
                 background-size: cover !important;
-            }
-        }
-        @media (max-width: 576px) {
-            .carousel-item {
-                height: 300px; /* Adjust height for extra small screens */
-            }
-            .carousel-item img {
-                min-height: 200px;
             }
         }
         .topbar {
