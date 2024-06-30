@@ -2248,13 +2248,13 @@ ul {
 }
 
 .large-logo {
-  width: 300px; /* Adjust as needed */
+  width: 280px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
 @media (max-width: 768px) {
   .large-logo {
-      max-width: 250px !important;
+      max-width: 200px !important;
   }
 }
 
@@ -2267,7 +2267,7 @@ ul {
 .main_menu .main-menu-item ul li .nav-link {
   color: #000000;
   font-size: 16px;
-  padding: 38px 25px;
+  padding: 30px 20px;
   font-family: "Cardo", serif;
   text-transform: capitalize;
   line-height: 12px;
