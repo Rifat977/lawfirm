@@ -1,0 +1,59 @@
+{% extends "./partial/base.html" %} 
+
+{% load static %}
+{% block title %}About us{% endblock title %} 
+
+{% block content %}
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>our services</h2>
+                        <p>home <span>//</span>our services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<!-- about part start-->
+<section class="team_part our_offer section_padding">
+    <div class="container">
+        <div class="row justify-content-between" id="servicesRow">
+            {% for service in services %}
+            <div class="col-lg-3 col-6 service-item {% if forloop.counter > 4 %}d-none{% endif %}">
+                <div class="single_offer_part">
+                    <div class="our_service">
+                        <img class="img-fluid shadow" src="{{ service.image.url }}" alt="offer_img_1">
+                    </div>
+                    <div class="team_member_info">
+                        <h4>{{ service.title }}</h4>
+                        {% if service.description %}
+                            <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseServiceDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseServiceDescription{{ forloop.counter }}">
+                                <Details></Details>
+                            </button>
+                        <div class="collapse mb-3" id="collapseServiceDescription{{ forloop.counter }}">
+                            <p style="text-align: justify;">{{ service.description }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if services|length > 4 %}
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-8 text-center">
+                <button class="btn btn-dark btn-sm mt-3" id="toggleButton" onclick="toggleServices()">Show More</button>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- about part end-->
+{% endblock content %}
