@@ -2248,13 +2248,14 @@ ul {
 }
 
 .large-logo {
-  width: 280px; /* Adjust as needed */
+  width: 140px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
+
 @media (max-width: 768px) {
   .large-logo {
-      max-width: 200px !important;
+    width: 190px !important;
   }
 }
 
@@ -2299,7 +2300,7 @@ ul {
 
 /* line 85, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_menu.scss */
 .menu_fixed {
-  position: fixed;
+  /* position: fixed; */
   z-index: 9999 !important;
   width: 100%;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
@@ -2357,7 +2358,7 @@ ul {
 @media (max-width: 991px) {
   /* line 134, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_menu.scss */
   .main_menu {
-    padding: 20px 0px;
+    padding: 10px 0px;
   }
   /* line 138, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_menu.scss */
   .home_menu .main-menu-item {
@@ -2381,10 +2382,11 @@ ul {
     z-index: 9999 !important;
     position: absolute;
     left: 0;
-    top: 50px;
+    top: 85px;
     width: 100%;
     background-color: #162b45;
     text-align: center !important;
+    border-radius: 8px;
   }
   /* line 166, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_menu.scss */
   .dropdown .dropdown-menu {

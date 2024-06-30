@@ -36,9 +36,9 @@
     <section class="about_part mt-md-5 mt-3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-4 col-7">
                     <div class="section_tittle text-center">
-                        <h2>{{about.title}}</h2>
+                        <h2 style="color: #162b45;">{{about.title}}</h2>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
         </div>
     </section>
     <!-- about part end-->
-
+<!-- 
     <section class="single_service" style="background-color: #f3f1ef !important;">
         <div class="container">
             <div class="row justify-content-center">
@@ -77,10 +77,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- team_part part start-->
-    <section class="team_part our_offer section_bg section_padding" style="background-color: white !important;">
+    <section class="team_part our_offer section_bg section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-sm-10">
@@ -91,7 +91,7 @@
             </div>
             <div class="row justify-content-between">
                 {% for team in teams %}
-                <div class="col-lg-4 col-6">
+                <div class="col-lg-4 col-12">
                     <div class="single_offer_part">
                         <div class="single_offer">
                             <img class="img-fluid shadow" src="{{ team.image.url }}" alt="offer_img_1">
@@ -105,8 +105,8 @@
                                 <Details></Details>
                             </button>
                             <div class="collapse mb-3" id="collapseTeamDescription{{ forloop.counter }}">
-                                <p style="text-align: justify;">{{ team.description }}</p>
-                            </div>
+                                <p style="text-align: justify; hyphens: auto; word-wrap: break-word !important; white-space: normal !important;">{{ team.description }}</p>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
         </div>
     </section>
     
-    <section class="team_part our_offer section_bg section_padding">
+    <section class="team_part our_offer section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-sm-10">
@@ -160,7 +160,7 @@
     
     <!-- our service part end-->
 
-    <section class="section_padding">
+    <section class="section_padding section_bg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
