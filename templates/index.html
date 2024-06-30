@@ -102,7 +102,7 @@
                                 <h6>{{ team.title }}</h6>
                             {% endif %}
                             <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseTeamDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseTeamDescription{{ forloop.counter }}">
-                                Show More
+                                <Details></Details>
                             </button>
                             <div class="collapse mb-3" id="collapseTeamDescription{{ forloop.counter }}">
                                 <p style="text-align: justify;">{{ team.description }}</p>
@@ -124,28 +124,38 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between">
+            <div class="row justify-content-between" id="servicesRow">
                 {% for service in services %}
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 col-6 service-item {% if forloop.counter > 4 %}d-none{% endif %}">
                     <div class="single_offer_part">
                         <div class="our_service">
                             <img class="img-fluid shadow" src="{{ service.image.url }}" alt="offer_img_1">
                         </div>
                         <div class="team_member_info">
                             <h4>{{ service.title }}</h4>
-                            <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseServiceDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseServiceDescription{{ forloop.counter }}">
-                                Show More
-                            </button>
+                            {% if service.description %}
+                                <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseServiceDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseServiceDescription{{ forloop.counter }}">
+                                    <Details></Details>
+                                </button>
                             <div class="collapse mb-3" id="collapseServiceDescription{{ forloop.counter }}">
                                 <p style="text-align: justify;">{{ service.description }}</p>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
+            {% if services|length > 4 %}
+            <div class="row justify-content-center mt-3">
+                <div class="col-lg-8 text-center">
+                    <button class="btn btn-dark btn-sm mt-3" id="toggleButton" onclick="toggleServices()">Show More</button>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </section>
+    
     
     
     <!-- our service part end-->

@@ -3280,6 +3280,13 @@ ul {
   margin-top: 26px;
 }
 
+@media (max-width: 768px) {
+  .team_part .team_member_info h4 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
 /* line 198, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_our_offer.scss */
 .team_part .team_social_icon a {
   font-size: 15px;

@@ -253,6 +253,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!-- footer part end-->
 
+    <script>
+        function toggleServices() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            const toggleButton = document.getElementById('toggleButton');
+            
+            serviceItems.forEach((item, index) => {
+                if (index >= 4) {
+                    item.classList.toggle('d-none');
+                }
+            });
+
+            if (toggleButton.innerText === 'Show More') {
+                toggleButton.innerText = 'Show Less';
+            } else {
+                toggleButton.innerText = 'Show More';
+            }
+        }
+
+    </script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
