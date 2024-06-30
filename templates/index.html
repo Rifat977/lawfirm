@@ -172,12 +172,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center" id="clientsRow">
+            <div class="row" id="clientsRow">
                 {% for client in clients %}
                 <div class="col-4 col-lg-2 col-sm-3 mt-2 client-item {% if forloop.counter > 6 %}d-none{% endif %}">
-                    <div class="single_service_part d-flex flex-column align-items-center">
-                        <div class="single_service_text p-2 d-flex flex-column align-items-center">
-                            <img class="shadow rounded" style="height: 120px; object-fit: cover; border-radius: 5px;" src="{{ client.image.url }}" alt="">
+                    <div class="single_service_part h-100 d-flex flex-column align-items-center">
+                        <div class="single_service_text p-2">
+                            <img class="shadow rounded img-fluid" style="border-radius: 5px;" src="{{ client.image.url }}" alt="">
                             <h6 class="mt-3 text-center">{{ client.name }}</h6>
                         </div>
                     </div>
