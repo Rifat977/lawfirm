@@ -160,59 +160,39 @@
     
     <!-- our service part end-->
 
-    <!-- Service part start-->
-    <section class=" section_padding">
+    <section class="section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="mb-5 text-center">
                         <h2>Our Clients</h2>
                         <p>
-                            We have provided legal services to and conducted cases for many companies,  firms and persons. Some of them are -
+                            We have provided legal services to and conducted cases for many companies, firms, and persons. Some of them are -
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center" id="clientsRow">
                 {% for client in clients %}
-                {% if forloop.counter <= 6 %}
-                <div class="col-4 col-lg-2 col-sm-3 mt-2">
+                <div class="col-4 col-lg-2 col-sm-3 mt-2 client-item {% if forloop.counter > 6 %}d-none{% endif %}">
                     <div class="single_service_part">
                         <div class="single_service_text p-2">
-                            <img class="shadow rounded" style="height: 120px; border-radius: 5px;" src="{{client.image.url}}" alt="">
-                            <h6 class="mt-3">{{client.name}}</h6>
+                            <img class="shadow rounded" style="height: 120px; border-radius: 5px;" src="{{ client.image.url }}" alt="">
+                            <h6 class="mt-3">{{ client.name }}</h6>
                         </div>
                     </div>
                 </div>
-                {% endif %}
                 {% endfor %}
             </div>
-            <div class="collapse" id="collapseClients">
-                <div class="row align-items-center">
-                    {% for client in clients %}
-                    {% if forloop.counter > 6 %}
-                    <div class="col-4 col-lg-2 col-sm-3 mt-2">
-                        <div class="single_service_part">
-                            <div class="single_service_text p-2">
-                                <img class="shadow rounded" style="height: 130px; border-radius: 5px;" src="{{client.image.url}}" alt="">
-                                <h6 class="mt-3">{{client.name}}</h6>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
+            {% if clients|length > 6 %}
             <div class="row justify-content-center mt-3">
                 <div class="col-lg-8 text-center">
-                    <button class="btn btn-dark btn-sm mt-3" type="button" data-toggle="collapse" data-target="#collapseClients" aria-expanded="false" aria-controls="collapseClients">
-                        Show More
-                    </button>                    
+                    <button class="btn btn-dark btn-sm mt-3" id="toggleClientsButton" onclick="toggleClients()">Show More</button>
                 </div>
             </div>
+            {% endif %}
         </div>
     </section>
-    
     
     <!-- Service part end-->
 

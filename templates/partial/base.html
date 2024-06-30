@@ -270,8 +270,41 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 toggleButton.innerText = 'Show More';
             }
         }
-
     </script>
+
+<script>
+    function toggleClients() {
+        const clientItems = document.querySelectorAll('.client-item');
+        const toggleButton = document.getElementById('toggleClientsButton');
+        
+        clientItems.forEach((item, index) => {
+            if (index >= 6) {
+                item.classList.toggle('d-none');
+            }
+        });
+
+        if (toggleButton.innerText === 'Show More') {
+            toggleButton.innerText = 'Show Less';
+        } else {
+            toggleButton.innerText = 'Show More';
+        }
+    }
+</script>
+
+<script>
+    function toggleServicesClients() {
+        var collapseClients = document.getElementById('collapseClients');
+        var toggleButton = document.getElementById('toggleButton');
+
+        if (collapseClients.classList.contains('show')) {
+            collapseClients.classList.remove('show');
+            toggleButton.innerText = 'Show More';
+        } else {
+            collapseClients.classList.add('show');
+            toggleButton.innerText = 'Show Less';
+        }
+    }
+</script>
 
 
     <script>
