@@ -310,9 +310,10 @@ a:focus, .button:focus, button:focus, .btn:focus {
 @media (max-width: 575px) {
   /* line 180, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_common.scss */
   .section_tittle h2 {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 35px;
     margin-bottom: 15px;
+    font-weight: bold;
   }
 }
 
