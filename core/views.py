@@ -52,7 +52,7 @@ def contact(request):
                 subject,
                 message,
                 settings.DEFAULT_FROM_EMAIL,
-                ['info@Prominentlawfirm.com'],
+                ['barristerlipi@Prominentlawfirm.com'],
                 fail_silently=False,
             )
         except Exception as e:

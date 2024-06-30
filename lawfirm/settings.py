@@ -138,7 +138,7 @@ EMAIL_HOST = 'mail.prominentlawfirm.com'  # Removed trailing space
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
 EMAIL_USE_SSL = False 
-EMAIL_HOST_USER = 'info@prominentlawfirm.com'
+EMAIL_HOST_USER = 'barristerlipi@prominentlawfirm.com'
 EMAIL_HOST_PASSWORD = 'Prominent@2024'
-DEFAULT_FROM_EMAIL = 'info@prominentlawfirm.com'
+DEFAULT_FROM_EMAIL = 'barristerlipi@prominentlawfirm.com'
 
