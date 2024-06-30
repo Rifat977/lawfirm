@@ -51,7 +51,7 @@ class PracticeArea(models.Model):
 class Service(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
     image = models.ImageField(upload_to='services/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if self.pk:

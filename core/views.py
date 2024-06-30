@@ -74,6 +74,13 @@ def service(request):
     }
     return render(request, 'service.html', context)
 
+def practice_details(request, practice_id):
+    practice_area = PracticeArea.objects.get(id=practice_id)
+    context = {
+        'practice_area' : practice_area
+    }
+    return render(request, 'practice_area_details.html', context)
+
 def team(request):
     teams = TeamMember.objects.all()
     context = {

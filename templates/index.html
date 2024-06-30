@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="section_tittle">
+                    <div class="section_tittle mt-5">
                         <h2>Area Of Practice</h2>
                         <p style="text-align: justify;"><span style="font-weight: bold;">Area of Practice at a glance: </span>{{site_settings.practice_areas}}</p>
                             <a href="{% url 'core:service' %}" class="btn btn-sm btn-dark mt-2">View Details</a>
@@ -98,7 +98,9 @@
                         </div>
                         <div class="team_member_info">
                             <h4>{{ team.name }}</h4>
-                            <h6>{{ team.title }}</h6>
+                            {% if team.title %}
+                                <h6>{{ team.title }}</h6>
+                            {% endif %}
                             <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseTeamDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseTeamDescription{{ forloop.counter }}">
                                 Show More
                             </button>

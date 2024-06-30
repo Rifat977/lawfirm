@@ -2969,9 +2969,9 @@ ul {
 
 /********** single service *************/
 /* line 161, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_service.scss */
-.single_service {
-  padding: 50px !important;
-}
+/* .single_service {
+  padding: 0px !important;
+} */
 
 /* line 163, ../../01 cl html template/New folder/May 2019/174 Ariclaw Lawyer/Ariclaw Lawyer Html/sass/_service.scss */
 .single_service .single_single_service {
