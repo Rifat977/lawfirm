@@ -129,6 +129,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="{% url 'core:video' %}">Videos</a>
                             </li>
+                            <li class="nav-item d-lg-none">
+                                <a class="nav-link text-light" href="{% url 'core:contact' %}">Contact</a>
+                            </li>
                         </ul>
                     </div>
                     <a href="{% url 'core:contact' %}" class="d-none d-sm-block menu_btn">Let’s Talk</a>
@@ -178,8 +181,12 @@
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Info</h4>
                         <ul>
+                            {% if site_settings.phone_number_1 %}
                             <li><a href="#"><i class="ti-mobile"></i>{{site_settings.phone_number_1}}</a></li>
+                            {% endif %}
+                            {% if site_settings.phone_number_2 %}
                             <li><a href="#"><i class="ti-mobile"></i>{{site_settings.phone_number_2}}</a></li>
+                            {% endif %}
                             <li><a href="#"><i class="ti-email"></i>{{site_settings.email}}</a></li>
                             <li><a href="#"><i class="ti-world"></i>{{site_settings.site}}</a></li>
                         </ul>
@@ -203,9 +210,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                     <div class="footer_menu">
                                         <ul>
                                             <li><a href="{% url 'core:index' %}">Home</a></li>
-                                            <li><a href="#">Practice Areas</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="{% url 'core:service' %}">Practice Areas</a></li>
+                                            <li><a href="{% url 'core:contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'core:blog' %}">Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
