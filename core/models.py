@@ -21,9 +21,9 @@ class Slider(models.Model):
 
 
 class AboutUs(models.Model):
-    image1 = models.ImageField(upload_to='about/')
-    image2 = models.ImageField(upload_to='about/')
-    title = models.CharField(max_length=200)
+    image1 = models.ImageField(upload_to='about/', null=True, blank=True)
+    image2 = models.ImageField(upload_to='about/', null=True, blank=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
     text = models.TextField()
 
     def save(self, *args, **kwargs):
@@ -37,8 +37,8 @@ class AboutUs(models.Model):
 
 
 class PracticeArea(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='practice_areas/')
+    title = models.CharField(max_length=200, null=True, blank=True)
+    image = models.ImageField(upload_to='practice_areas/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
@@ -50,7 +50,7 @@ class PracticeArea(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='services/')
+    image = models.ImageField(upload_to='services/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
