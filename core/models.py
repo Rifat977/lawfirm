@@ -67,7 +67,7 @@ class Service(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='team/')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField()
 
     def save(self, *args, **kwargs):
