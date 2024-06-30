@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AboutUs, PracticeArea, TeamMember, Client, Blog, ContactUs, SiteSettings, Slider, Video
+from .models import *
 
 @admin.register(Slider)
 class SliderAdmin(admin.ModelAdmin):
@@ -13,6 +13,11 @@ class AboutUsAdmin(admin.ModelAdmin):
 
 @admin.register(PracticeArea)
 class PracticeAreaAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title', 'description')
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title', 'description')
 

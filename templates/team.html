@@ -27,26 +27,26 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-sm-10">
                 <div class="section_tittle">
-                    <h2>Meet Our Attorneys</h2>
-                    <p>Over their the abundantly every midst place thing them them winged you're
-                        beginning forth you. Fruit seas very does can after herb moved so was Kind </p>
+                    <h2>Meet Our Team Members</h2>
                 </div>
             </div>
         </div>
         <div class="row justify-content-between">
             {% for team in teams %}
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-4 col-6">
                 <div class="single_offer_part">
                     <div class="single_offer">
                         <img class="img-fluid" src="{{team.image.url}}" alt="offer_img_1">
-                        <div class="hover_text">
-                            <p>{{team.description|slice:"600"}}</p>
-                        </div>
-
                     </div>
                     <div class="team_member_info">
                         <h4>{{team.name}}</h4>
-                        <p>{{team.title}}</p>
+                        <h6>{{team.title}}</h6>
+                        <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseDescription{{ forloop.counter }}">
+                            <Details></Details>
+                        </button>
+                        <div class="collapse mb-2" id="collapseDescription{{ forloop.counter }}">
+                            <p style="text-align: justify;">{{team.description}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

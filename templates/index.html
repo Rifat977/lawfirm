@@ -57,7 +57,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="about_text text-center mb-5">
-                        <p>{{about.text}}</p>
+                        <p style="text-align: justify;">{{about.text}}</p>
                     </div>
                 </div>
             </div>
@@ -70,8 +70,8 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="section_tittle">
-                        <h2>Practice Areas</h2>
-                        <p><span style="font-weight: bold;">Area of Practice at a glance: </span>{{site_settings.practice_areas}}</p>
+                        <h2>Area Of Practice</h2>
+                        <p style="text-align: justify;"><span style="font-weight: bold;">Area of Practice at a glance: </span>{{site_settings.practice_areas}}</p>
                             <a href="{% url 'core:service' %}" class="btn btn-sm btn-dark mt-2">View Details</a>
                     </div>
                 </div>
@@ -85,21 +85,26 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-sm-10">
                     <div class="section_tittle">
-                        <h2>Meet Our Attorneys</h2>
+                        <h2>Meet Our Team Members</h2>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between">
                 {% for team in teams %}
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-4 col-6">
                     <div class="single_offer_part">
                         <div class="single_offer">
-                            <img class="img-fluid" src="{{team.image.url}}" alt="offer_img_1">
-
+                            <img class="img-fluid shadow" src="{{ team.image.url }}" alt="offer_img_1">
                         </div>
                         <div class="team_member_info">
-                            <h4>{{team.name}}</h4>
-                            <p>{{team.title}}</p>
+                            <h4>{{ team.name }}</h4>
+                            <h6>{{ team.title }}</h6>
+                            <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseTeamDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseTeamDescription{{ forloop.counter }}">
+                                Show More
+                            </button>
+                            <div class="collapse mb-3" id="collapseTeamDescription{{ forloop.counter }}">
+                                <p style="text-align: justify;">{{ team.description }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,10 +112,44 @@
             </div>
         </div>
     </section>
-    <!-- team_part part end-->
+    
+    <section class="team_part our_offer section_bg section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-sm-10">
+                    <div class="section_tittle">
+                        <h2>Our Services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                {% for service in services %}
+                <div class="col-lg-3 col-6">
+                    <div class="single_offer_part">
+                        <div class="our_service">
+                            <img class="img-fluid shadow" src="{{ service.image.url }}" alt="offer_img_1">
+                        </div>
+                        <div class="team_member_info">
+                            <h4>{{ service.title }}</h4>
+                            <button class="btn btn-dark mb-4 btn-sm" type="button" data-toggle="collapse" data-target="#collapseServiceDescription{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseServiceDescription{{ forloop.counter }}">
+                                Show More
+                            </button>
+                            <div class="collapse mb-3" id="collapseServiceDescription{{ forloop.counter }}">
+                                <p style="text-align: justify;">{{ service.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- our service part end-->
 
     <!-- Service part start-->
-    <section class="service_part section_padding">
+    <section class=" section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -125,7 +164,8 @@
                 <div class="col-4 col-lg-2 col-sm-3 mt-2">
                     <div class="single_service_part">
                         <div class="single_service_text p-2">
-                            <img src="{{client.image.url}}" alt="">
+                            <img style="height: 130px; border-radius: 5px;" src="{{client.image.url}}" alt="">
+                            <h6 class="mt-3">{{client.name}}</h6>
                         </div>
                     </div>
                 </div>
@@ -139,7 +179,8 @@
                     <div class="col-4 col-lg-2 col-sm-3 mt-2">
                         <div class="single_service_part">
                             <div class="single_service_text p-2">
-                                <img src="{{client.image.url}}" alt="">
+                                <img style="height: 130px; border-radius: 5px;" src="{{client.image.url}}" alt="">
+                                <h6 class="mt-3">{{client.name}}</h6>
                             </div>
                         </div>
                     </div>
@@ -151,7 +192,7 @@
                 <div class="col-lg-8 text-center">
                     <button class="btn btn-dark btn-sm mt-3" type="button" data-toggle="collapse" data-target="#collapseClients" aria-expanded="false" aria-controls="collapseClients">
                         Show More
-                    </button>
+                    </button>                    
                 </div>
             </div>
         </div>

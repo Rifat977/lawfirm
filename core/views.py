@@ -14,6 +14,7 @@ def index(request):
     clients = Client.objects.all()
     sliders = Slider.objects.all()
     blogs = Blog.objects.all()[:3]
+    services = Service.objects.all()
 
     context = {
         'about': about,
@@ -21,7 +22,8 @@ def index(request):
         'teams': teams,
         'clients': clients,
         'sliders': sliders,
-        'blogs':blogs
+        'blogs':blogs,
+        'services' : services
     }
     return render(request, 'index.html', context)
 

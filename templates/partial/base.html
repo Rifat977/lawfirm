@@ -60,16 +60,30 @@
             text-decoration: underline;
         }
         .single_offer img {
-            height: 280px !important;
+            height: 350px !important;
             width: 100% !important;
             object-fit: cover !important;
             border-radius: 10px;
         }
         @media (max-width: 768px) {
             .single_offer img {
-                height: 240px !important;
+                height: 300px !important;
                 width: 100% !important;
-                object-fit: contain !important;
+                object-fit: cover !important;
+                border-radius: 10px;
+            }
+        }
+        .our_service img {
+            height: 200px !important;
+            width: 100% !important;
+            object-fit: cover !important;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .our_service img {
+                height: 300px !important;
+                width: 100% !important;
+                object-fit: cover !important;
                 border-radius: 10px;
             }
         }
@@ -121,7 +135,7 @@
                                 <a class="nav-link text-light" href="{% url 'core:service' %}">Practice Areas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="{% url 'core:team' %}">Attorneys</a>
+                                <a class="nav-link text-light" href="{% url 'core:team' %}">Our Team</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="{% url 'core:blog' %}">Blogs</a>
@@ -151,7 +165,7 @@
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-sm-6 col-xl-3">
+                <div class="col-sm-6 col-xl-4">
                     <div class="single-footer-widget footer_1">
                         <a href="index.html"> <img src="{{site_settings.logo.url}}" alt=""> </a>
                         <p>The Firm is established in Dhaka with the

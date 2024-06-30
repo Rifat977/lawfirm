@@ -2248,13 +2248,13 @@ ul {
 }
 
 .large-logo {
-  width: 230px; /* Adjust as needed */
+  width: 300px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
 @media (max-width: 768px) {
   .large-logo {
-      max-width: 190px !important;
+      max-width: 250px !important;
   }
 }
 
@@ -2812,7 +2812,7 @@ ul {
 .service_part .single_service_part {
   text-align: center;
   height: 160px;
-  background-color: #fff;
+  background-color: none;
   display: table;
   width: 100%;
   border-radius: 8px;

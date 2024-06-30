@@ -48,6 +48,21 @@ class PracticeArea(models.Model):
                 original.image.delete(save=False)
         super().save(*args, **kwargs)
 
+class Service(models.Model):
+    title = models.CharField(max_length=200, null=True, blank=True)
+    image = models.ImageField(upload_to='services/')
+    description = models.TextField()
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            original = Service.objects.get(pk=self.pk)
+            if original.image != self.image:
+                original.image.delete(save=False)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
 
 class TeamMember(models.Model):
     name = models.CharField(max_length=200)
