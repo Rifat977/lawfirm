@@ -56,7 +56,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="about_text text-center">
+                    <div class="about_text text-center mb-5">
                         <p>{{about.text}}</p>
                     </div>
                 </div>
@@ -65,30 +65,16 @@
     </section>
     <!-- about part end-->
 
-    <section class="single_service section_padding" style="background-color: #f3f1ef !important;">
+    <section class="single_service" style="background-color: #f3f1ef !important;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-10">
+                <div class="col-12">
                     <div class="section_tittle">
                         <h2>Practice Areas</h2>
-                        <p><span style="font-weight: bold;">Area of Practice at a glance: </span>All sorts of litigation, Alternative Dispute Resolution (ADR),
-                            Arbitration, Admiralty and Maritime Dispute Resolution, Banking and Finance, Corporate
-                            Documentation, Merger and Acquisition, Employment and Labour law, Intellectual property,
-                            Investment and Direct Foreign Investment, Public Procurement law, Real estate, Security and
-                            Exchange laws, Taxation, VAT and Customs, etc.</p>
+                        <p><span style="font-weight: bold;">Area of Practice at a glance: </span>{{site_settings.practice_areas}}</p>
+                            <a href="{% url 'core:service' %}" class="btn btn-sm btn-dark mt-2">View Details</a>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-between">
-                {% for service in services %}
-                <div class="col-lg-4 col-sm-12">
-                    <div class="single_single_service">
-                        <img style="height:auto; width: 100px;" src="{{service.image.url}}" alt="#">
-                        <h4>{{service.title}}</h4>
-                        <p>{{service.description|slice:"180"}} <a href="{% url 'core:service' %}" style="text-decoration: none; color: black;">Read More..</a></p>
-                    </div>
-                </div>
-                {% endfor %}
             </div>
         </div>
     </section>
@@ -100,20 +86,15 @@
                 <div class="col-lg-7 col-sm-10">
                     <div class="section_tittle">
                         <h2>Meet Our Attorneys</h2>
-                        <p>Over their the abundantly every midst place thing them them winged you're
-                            beginning forth you. Fruit seas very does can after herb moved so was Kind </p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between">
                 {% for team in teams %}
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-3 col-6">
                     <div class="single_offer_part">
                         <div class="single_offer">
                             <img class="img-fluid" src="{{team.image.url}}" alt="offer_img_1">
-                            <div class="hover_text">
-                                <p>{{team.description|slice:"600"}}</p>
-                            </div>
 
                         </div>
                         <div class="team_member_info">
@@ -133,18 +114,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="section_tittle text-center">
+                    <div class="mb-5 text-center">
                         <h2>Our Clients</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 {% for client in clients %}
-                <div class="col-lg-3 col-sm-6 mt-2">
+                <div class="col-4 col-lg-2 col-sm-3 mt-2">
                     <div class="single_service_part">
-                        <div class="single_service_text">
+                        <div class="single_service_text p-2">
                             <img src="{{client.image.url}}" alt="">
-                            <h2>{{client.name}}</h2>
+                            <!-- <h4 class="mt-1">{{client.name}}</h4> -->
                         </div>
                     </div>
                 </div>
@@ -173,14 +154,13 @@
                     <div class="single_offer_part">
                         <div class="single_offer">
                             <img src="{{blog.image.url}}" alt="">
-                            <div class="hover_text">
+                            <div class="mt-2">
                                 <div class="single-home-blog">
-                                    <a href="blog.html"> <i class="ti-bookmark"></i> {{blog.category}}</a>
+                                    <a href="#"> <i class="ti-bookmark"></i> {{blog.category}}</a>
                                     <a class="time"> <i class="ti-time"></i> {{blog.publication_date}}</a>
-                                    <a href="blog.html">
+                                    <a href="{% url 'core:single_blog' blog.id %}">
                                         <h5 class="card-title">{{blog.title}}</h5>
                                     </a>
-                                    <p>{{blog.content|safe|slice:'200'}}</p>
                                 </div>
                             </div>
                         </div>

@@ -109,6 +109,7 @@ class SiteSettings(models.Model):
     evening_chamber_location = models.CharField(max_length=200)
     court_chamber_location = models.CharField(max_length=200)
     logo = models.FileField(upload_to='logos/', help_text='Image dimensions should be 250px (width) by 75px (height).')
+    practice_areas = models.TextField(null=True, blank=True)
     linkedin_url = models.URLField(blank=True, null=True)
     facebook_url = models.URLField(blank=True, null=True)
     youtube_url = models.URLField(blank=True, null=True)

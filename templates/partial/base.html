@@ -5,7 +5,8 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>
         {% block title %}{% endblock title %} | {{site_settings.company_name}}
     </title>
@@ -38,7 +39,6 @@
             height: auto;
             width: 100%;
         }
-        /* Media queries for responsive design */
         @media (max-width: 768px) {
             .carousel-item img {
                 height: auto;
@@ -60,9 +60,18 @@
             text-decoration: underline;
         }
         .single_offer img {
-            height: 400px !important;
+            height: 280px !important;
             width: 100% !important;
             object-fit: cover !important;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .single_offer img {
+                height: 240px !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                border-radius: 10px;
+            }
         }
     </style>
 
@@ -75,7 +84,7 @@
           <div class="row">
             <div class="col-md-6 col-12 text-md-left text-center mb-2 mb-md-0">
               <span>Email: {{site_settings.email}}</span>
-              <span class="ml-md-3 d-block d-md-inline">Phone: {{site_settings.phone_number_1}}, {{site_settings.phone_number_2}}</span>
+              <span class="ml-md-3 d-block d-md-inline">Phone:{% if site_settings.phone_number_1 %} {{site_settings.phone_number_1}} {% endif %} {% if site_settings.phone_number_2 %}, {{site_settings.phone_number_2}} {% endif %}</span>
             </div>
             <div class="col-md-6 col-12 text-md-right text-center">
               <a href="{{site_settings.linkedin_url}}" class="mr-2">Linkedin</a> |
@@ -93,8 +102,8 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="/"> <img src="{{site_settings.logo.url}}" alt="logo"> </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    <a class="navbar-brand" href="/"> <img class="large-logo" src="{{site_settings.logo.url}}" alt="logo"> </a>
+                    <button class="navbar-toggler mt-3" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="menu_icon"></span>
