@@ -8,6 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="K0Z5jiKfHpCXDbhxbsuvO9_759GtMZ7Qbo_n5liLNVg" />
 
+    <meta name="description" content="Prominent Law Firm is a set of experienced and very competent young lawyers having qualified from the top Universities of Bangladesh and the World.">
+    <meta name="keywords" content="prominent law firm, legal services, expert attorneys, legal advice, legal representation">
+    <meta name="author" content="Prominent Law Firm">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Prominent Law Firm - Expert Legal Services">
+    <meta property="og:description" content="Prominent Law Firm offers expert legal services with a team of experienced attorneys. Contact us for top-notch legal advice and representation.">
+    <meta property="og:url" content="https://www.prominentlawfirm.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.prominentlawfirm.com/media/logos/Prominent_Law_Firm_LOGO_WEB.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prominent Law Firm - Expert Legal Services">
+    <meta name="twitter:description" content="Prominent Law Firm offers expert legal services with a team of experienced attorneys. Contact us for top-notch legal advice and representation.">
+    <meta name="twitter:image" content="https://www.prominentlawfirm.com/media/logos/Prominent_Law_Firm_LOGO_WEB.svg">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.prominentlawfirm.com">
+
     <title>
         {% block title %}{% endblock title %} | {{site_settings.company_name}}
     </title>
@@ -183,7 +206,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-xl-4">
                     <div class="single-footer-widget footer_1">
-                        <a href="index.html"> <img style="height: 160px;" src="{{site_settings.logo.url}}" alt=""> </a>
+                        <a href="{% url 'core:index' %}"> <img style="height: 160px;" src="{{site_settings.logo.url}}" alt=""> </a>
                         <p>{{site_about.text}}</p>
                         <div class="social_icon">
                             <a href="#"> <i class="ti-facebook"></i> </a>
