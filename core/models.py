@@ -36,17 +36,17 @@ class AboutUs(models.Model):
         super().save(*args, **kwargs)
 
 
-class PracticeArea(models.Model):
-    title = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='practice_areas/', null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+# class PracticeArea(models.Model):
+#     title = models.CharField(max_length=200, null=True, blank=True)
+#     image = models.ImageField(upload_to='practice_areas/', null=True, blank=True)
+#     description = models.TextField(null=True, blank=True)
 
-    def save(self, *args, **kwargs):
-        if self.pk:
-            original = PracticeArea.objects.get(pk=self.pk)
-            if original.image != self.image:
-                original.image.delete(save=False)
-        super().save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         if self.pk:
+#             original = PracticeArea.objects.get(pk=self.pk)
+#             if original.image != self.image:
+#                 original.image.delete(save=False)
+#         super().save(*args, **kwargs)
 
 class Service(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
