@@ -11,10 +11,10 @@ class AboutUsAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title', 'text')
 
-@admin.register(PracticeArea)
-class PracticeAreaAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    search_fields = ('title', 'description')
+# @admin.register(PracticeArea)
+# class PracticeAreaAdmin(admin.ModelAdmin):
+#     list_display = ('title',)
+#     search_fields = ('title', 'description')
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
